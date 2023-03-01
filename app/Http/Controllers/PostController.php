@@ -15,4 +15,18 @@ class PostController extends Controller
             'posts' => $posts
         ]);
     }
+
+    public function show($id)
+    {
+        $post = Post::find($id);
+
+        return view('article', [
+            'post' => $post
+        ]);
+    }
+
+    public function new()
+    {
+        return view('form');
+    }
 }
